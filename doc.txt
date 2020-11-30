@@ -1,0 +1,7 @@
+MERN STACK
+
+-Mongo
+-Node
+-Express
+-React
+
