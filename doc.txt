@@ -4,4 +4,21 @@ MERN STACK
 -Node
 -Express
 -React
+ls ~/.ssh
+ssh-keygen  -t rsa -b 4096 -C "yashvantvala19899@gmail.com" 
 
+//to add ssh files
+
+eval "$(ssh-agent -s)"
+
+//to add secure key in system
+
+ssh-add -K ~/.ssh/id_rsa
+
+//get 
+
+cat ~/.ssh/id_rsa.pub
+
+//test connection
+
+ssh -T git@github.com
