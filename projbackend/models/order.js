@@ -1,5 +1,6 @@
 const mongoose = require('mongoose');
 const {ObjectId} = mongoose.Schema;
+
 const ProductCartSchema = new mongoose.Schema({
 	product:{
 		type:ObjectId,
@@ -9,6 +10,7 @@ const ProductCartSchema = new mongoose.Schema({
 	count:Number,
 	price:Number
 });
+const ProductCart = mongoose.model("ProductCart",ProductCartSchema);
 
 const orderShema = new mongoose.Schema({
 		products:[ProductCartSchema],
@@ -23,6 +25,5 @@ const orderShema = new mongoose.Schema({
 },{timestamps:true});
 
 const order = mongoose.model("Order",orderShema);
-const ProductCart = mongoose.model("ProductCart",ProductCart);
 
-module.exports = {order,ProductCart}
+module.exports = {ProductCart,order}
