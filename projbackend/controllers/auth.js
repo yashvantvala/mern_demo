@@ -32,11 +32,11 @@ exports.signin = (req,res) =>{
 	}
 	User.findOne({email}, (error,user)=>{
 		if(!user || error){
-			res.status(400).json({error:'User email does not exists'});
+			return res.status(400).json({error:'User email does not exists'});
 		}
 
 		if(!user.authenticate(password)){
-			res.status(401).json({error:'Invalid email or password.'});
+		return res.status(401).json({error:'Invalid email or password.'});
 		}
 		//create a token
 		const token = jwt.sign({_id:user._id},process.env.SECRET);
@@ -44,7 +44,7 @@ exports.signin = (req,res) =>{
 		res.cookie("token",token,{expire:new Date()+9999});
 		//send response to front-end
 		const {_id,name,email,role} = user;
-		res.status(200).json({token,user:{_id,name,email,role}});
+		return res.status(200).json({token,user:{_id,name,email,role}});
 	})
 }
 
