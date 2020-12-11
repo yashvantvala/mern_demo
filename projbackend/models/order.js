@@ -17,11 +17,16 @@ const orderShema = new mongoose.Schema({
 		transaction_id:{},
 		amount:{type:Number},
 		address:String,
+		status:{
+			type:String,
+			default:"Recieved",
+			enum:["Cancelled","Delivered","Shipped", "Processing", "Recieved"]
+		},
 		updated:Date,
 		user:{
 			type:ObjectId,
 			ref:"User"
-		}
+		},
 },{timestamps:true});
 
 const order = mongoose.model("Order",orderShema);
