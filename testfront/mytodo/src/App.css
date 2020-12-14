@@ -1,0 +1,35 @@
+body{
+  background: #4e4052;
+  font-size: 20px;
+  color:#fff;
+}
+.logo{
+  display: block;
+  margin-left: auto;
+  margin-right: auto;
+}
+.flex, .list{
+  display: flex;
+  justify-content: center;
+}
+p{
+  display: block;
+}
+.add-btn{
+  border-radius: 15px;
+  background-color: rgb(219, 75, 99);
+  color:#fff;
+}
+.text-center{
+  text-align: center;
+}
+.ml-1{
+  margin-left: 4px;
+}
+
+input[type="text"]{
+  width:200px;
+  border-radius: 10px;
+  height:30px;
+  outline:none;
+}
