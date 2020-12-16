@@ -4,12 +4,12 @@ const jwt = require('jsonwebtoken');
 const expressjwt = require('express-jwt');
 //controllers
 exports.signup = (req,res) =>{
-
 	const errors = validationResult(req);
 	if(!errors.isEmpty()){
 		return res.status(400).json({error:errors.array()[0].msg})
 	}
 	const user = new User(req.body);
+
 	user.save((error,user)=>{
 		if(error){
 			return res.status(400).json({
